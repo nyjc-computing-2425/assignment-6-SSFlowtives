@@ -5,13 +5,13 @@ import time
 def clock(n: int):
     """
     
-    This function takes in integer n and shows the time and updates it every second,
-    for n number of seconds.
+    This function takes in integer n and shows the time
+    and updates it every second, for n number of seconds.
 
     Parameters
     ----------
     n: int
-        Amount of times to update time
+        Amount of seconds
 
     Returns
     -------
@@ -23,10 +23,10 @@ def clock(n: int):
     12:59:17
     """
     for i in range(n):
-        current_time = datetime.now()
-        print(f"{str(current_time.hour).zfill(2)}:{str(current_time.minute).zfill(2)}:{str(current_time.second).zfill(2)}", end='\r')
+        now = datetime.now().strftime('%H, %M, %S')
+        now = now.replace(", ", ':')
+        print(f"{now}", end='\r')
         time.sleep(1)
-    pass
 
 
 def lcm(a: int, b: int) -> int:
